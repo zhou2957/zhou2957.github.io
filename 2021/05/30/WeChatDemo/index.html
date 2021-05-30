@@ -3,25 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>从0开始 用企业微信做一个属于你的定时天气推送 | Z_z~s</title>
+  <title>微信小程序逻辑代码 | Z_z~s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Z_z 's Blog" />
   
-  <meta name="description" content="成品如图它也可以是这样的两种只是代码有略微的区别而已，功能都是一样的。 只需要五个工具： 1.企业微信账号2.腾讯云函数（可以白嫖每个月免费额度很多）3.和风天气4.天行数据5.一双灵活的双手以及脑袋 教程开始：首先打开企业微信官网注册一个账号：随意填写，管理员微信用自己的。">
+  <meta name="description" content="数据劫持代理1234567891011121314151617181920212223242526272829303132let data &#x3D;&amp;#123;	username: &amp;#x27;nike&amp;#x27;	age : &amp;#x27;10&amp;#x27;&amp;#125;let _this &#x3D; &amp;#123;	&amp;#125;&#x2F;&#x2F;利用Object.defineProperty()方法进行数据劫持代理  主要是用g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从0开始 用企业微信做一个属于你的定时天气推送">
-<meta property="og:url" content="https://zhou2957.github.io/2021/05/30/weather/index.html">
+<meta property="og:title" content="微信小程序逻辑代码">
+<meta property="og:url" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/index.html">
 <meta property="og:site_name" content="Z_z~s">
-<meta property="og:description" content="成品如图它也可以是这样的两种只是代码有略微的区别而已，功能都是一样的。 只需要五个工具： 1.企业微信账号2.腾讯云函数（可以白嫖每个月免费额度很多）3.和风天气4.天行数据5.一双灵活的双手以及脑袋 教程开始：首先打开企业微信官网注册一个账号：随意填写，管理员微信用自己的。">
+<meta property="og:description" content="数据劫持代理1234567891011121314151617181920212223242526272829303132let data &#x3D;&amp;#123;	username: &amp;#x27;nike&amp;#x27;	age : &amp;#x27;10&amp;#x27;&amp;#125;let _this &#x3D; &amp;#123;	&amp;#125;&#x2F;&#x2F;利用Object.defineProperty()方法进行数据劫持代理  主要是用g">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/weather/a.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/weather/b.jpg">
-<meta property="article:published_time" content="2021-05-30T09:08:43.000Z">
-<meta property="article:modified_time" content="2021-05-30T10:38:56.522Z">
+<meta property="article:published_time" content="2021-05-30T13:56:19.000Z">
+<meta property="article:modified_time" content="2021-05-30T14:49:36.670Z">
 <meta property="article:author" content="zhou2957">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zhou2957.github.io/2021/05/30/weather/a.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -115,14 +112,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-weather" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-WeChatDemo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      从0开始 用企业微信做一个属于你的定时天气推送
+      微信小程序逻辑代码
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -144,15 +141,28 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>成品如图<br><img src="a.png" alt="a.png"><br>它也可以是这样的<br><img src="b.jpg" alt="b.jpg"><br>两种只是代码有略微的区别而已，功能都是一样的。</p>
-<p>只需要五个工具：</p>
-<p>1.企业微信账号<br>2.腾讯云函数（可以白嫖每个月免费额度很多）<br>3.和风天气<br>4.天行数据<br>5.一双灵活的双手以及脑袋</p>
-<p>教程开始：<br>首先打开企业微信官网注册一个账号：<br>随意填写，管理员微信用自己的。</p>
+            <h2 id="数据劫持代理"><a href="#数据劫持代理" class="headerlink" title="数据劫持代理"></a>数据劫持代理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">let data =&#123;</span><br><span class="line">	username: &#x27;nike&#x27;</span><br><span class="line">	age : &#x27;10&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let _this = &#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//利用Object.defineProperty()方法进行数据劫持代理  主要是用getset方法</span><br><span class="line">for(let item in data)&#123;</span><br><span class="line">	// console.log(item,data[item]);</span><br><span class="line">	Object.defineProperty(_this,item,&#123;</span><br><span class="line">	// get 用来获取对象的属性值 当获取时调用该方法</span><br><span class="line">	get()&#123;</span><br><span class="line">		console.log(&#x27;get()&#x27;);</span><br><span class="line">		return data[itme]</span><br><span class="line">	&#125;,</span><br><span class="line">	// set 用来监视对象属性 当修改时调用</span><br><span class="line">	set(newValue)&#123;</span><br><span class="line">		console.log(&#x27;set()&#x27;,newValue);</span><br><span class="line">		// _this.username = newValue;  不要再set方法中修改当前扩展属性的值，会造成死循环</span><br><span class="line">		data[item] = newValue;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(_this);</span><br><span class="line">// 通过Object.defineProperty()的get方法添加的扩展属性不能直接对象.属性修改</span><br><span class="line">_this.username = &#x27;wade&#x27;;</span><br><span class="line">console.log(_this.username);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><h6 id="事件可以绑定在任何组件上。"><a href="#事件可以绑定在任何组件上。" class="headerlink" title="事件可以绑定在任何组件上。"></a>事件可以绑定在任何组件上。</h6><blockquote>
+<p>事件流有三个阶段</p>
+<ol>
+<li>捕获：从外向内，即从父元素到子元素</li>
+<li>执行阶段</li>
+<li>冒泡：从内向外，即从子元素到父元素</li>
+</ol>
+</blockquote>
+<p>bindtap   当用户点击该组件的时候会在该页面对应的Page中找到相应的事件处理函数。</p>
+<p>index.wxml：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view bindtap=&quot;parenttap&quot;&gt; //外部父元素  </span><br><span class="line">&lt;button bindtap=&quot;childtap&quot;&gt;事件&lt;/button&gt;//内部子元素</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<p>index.js中添加如下方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">parenttap()&#123;</span><br><span class="line">  console.log(&quot;子元素冒泡&quot;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">childtap()&#123;</span><br><span class="line">  console.log(&quot;父元素捕获&quot;)</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>当子元素被点击时：<br><img src="" alt="001.png"><br>当把事件的bindtap改成catchtap时，它可以阻止子元素向父元素冒泡<br>点击子元素时：<br><img src="" alt="002.png"><br>再点击父元素时：<br><img src="" alt="003.png"></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年05月30日 18:38</p>
-        <p>原始链接： <a class="post-url" href="/2021/05/30/weather/" title="从0开始 用企业微信做一个属于你的定时天气推送">https://zhou2957.github.io/2021/05/30/weather/</a></p>
+        <p>最后更新： 2021年05月30日 22:49</p>
+        <p>原始链接： <a class="post-url" href="/2021/05/30/WeChatDemo/" title="微信小程序逻辑代码">https://zhou2957.github.io/2021/05/30/WeChatDemo/</a></p>
         <footer>
             <a href="https://zhou2957.github.io">
                 <img src="/images/logo.png" alt="zhou2957">
@@ -209,7 +219,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhou2957.github.io/2021/05/30/weather/&title=《从0开始 用企业微信做一个属于你的定时天气推送》 — Z_z~s&pic=https://zhou2957.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhou2957.github.io/2021/05/30/WeChatDemo/&title=《微信小程序逻辑代码》 — Z_z~s&pic=https://zhou2957.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -219,22 +229,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhou2957.github.io/2021/05/30/weather/&title=《从0开始 用企业微信做一个属于你的定时天气推送》 — Z_z~s&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhou2957.github.io/2021/05/30/WeChatDemo/&title=《微信小程序逻辑代码》 — Z_z~s&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhou2957.github.io/2021/05/30/weather/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhou2957.github.io/2021/05/30/WeChatDemo/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《从0开始 用企业微信做一个属于你的定时天气推送》 — Z_z~s&url=https://zhou2957.github.io/2021/05/30/weather/&via=https://zhou2957.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序逻辑代码》 — Z_z~s&url=https://zhou2957.github.io/2021/05/30/WeChatDemo/&via=https://zhou2957.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhou2957.github.io/2021/05/30/weather/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhou2957.github.io/2021/05/30/WeChatDemo/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -244,7 +254,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zhou2957.github.io/2021/05/30/weather/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zhou2957.github.io/2021/05/30/WeChatDemo/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,22 +270,18 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81%E4%BB%A3%E7%90%86"><span class="post-toc-text">数据劫持代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="post-toc-text">事件绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%8F%AF%E4%BB%A5%E7%BB%91%E5%AE%9A%E5%9C%A8%E4%BB%BB%E4%BD%95%E7%BB%84%E4%BB%B6%E4%B8%8A%E3%80%82"><span class="post-toc-text">事件可以绑定在任何组件上。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
-    <a href="/2021/05/30/WeChatNote/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          WeChatNote
-        
-      </span>
-    </a>
   
-  
-    <a href="/2021/05/30/Start/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">All Begin From Here !!</span>
+    <a href="/2021/05/30/WeChatNote/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">WeChatNote</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
