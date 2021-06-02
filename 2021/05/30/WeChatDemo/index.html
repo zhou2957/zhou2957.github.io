@@ -18,8 +18,21 @@
 <meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/001.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/002.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/003.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/004.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/011.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/012.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/005.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/006.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/007.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/008.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/009.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/010.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/010.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/014.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/015.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/016.png">
 <meta property="article:published_time" content="2021-05-30T13:56:19.000Z">
-<meta property="article:modified_time" content="2021-05-30T15:06:37.682Z">
+<meta property="article:modified_time" content="2021-06-01T14:02:08.534Z">
 <meta property="article:author" content="zhou2957">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhou2957.github.io/2021/05/30/WeChatDemo/001.png">
@@ -162,10 +175,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">parenttap()&#123;</span><br><span class="line">  console.log(&quot;子元素冒泡&quot;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">childtap()&#123;</span><br><span class="line">  console.log(&quot;父元素捕获&quot;)</span><br><span class="line">  </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>当子元素被点击时：<br><img src="001.png" alt="001.png"><br>当把事件的bindtap改成catchtap时，它可以阻止子元素向父元素冒泡<br>点击子元素时：<br><img src="002.png" alt="002.png"><br>再点击父元素时：<br><img src="003.png" alt="003.png"></p>
+<h2 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h2><p>实现路由跳转时需要路径开始的位置使用的是当前文件的路径，需要使用绝对路径或其他方式(相对路径)<br><img src="004.png" alt="004.png"><br><img src="011.png" alt="011.png"><br><img src="012.png" alt="012.png"></p>
+<p>几种跳转的api，不同的是跳转后是否保留以前的界面以及跳转到某个页面或返回上n个界面<br><img src="005.png" alt="005.png"><br><img src="006.png" alt="006.png"><br><img src="007.png" alt="007.png"><br><img src="008.png" alt="008.png"><br><img src="009.png" alt="009.png"></p>
+<p>若不想使用app.json的某些配置可以单独在此页面的json文件中单独配置，而与app.json的语法不同的是在单独页面进行设置时不需要再window中编写代码，及局部配置的优先级高于全局<br><img src="010.png" alt="010.png"></p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>官方api给出的图示如下：</p>
+<p><img src="010.png" alt="010.png"></p>
+<p>在js页面中自动编写了如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面加载</span><br><span class="line">   */</span><br><span class="line">  onLoad: function (options) &#123;</span><br><span class="line">console.log(&#x27;监听页面加载&#x27;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面初次渲染完成</span><br><span class="line">   */</span><br><span class="line">  onReady: function () &#123;</span><br><span class="line">    console.log(&#x27;监听页面初次渲染完成&#x27;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面显示</span><br><span class="line">   */</span><br><span class="line">  onShow: function () &#123;</span><br><span class="line">    console.log(&#x27;监听页面显示&#x27;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面隐藏</span><br><span class="line">   */</span><br><span class="line">  onHide: function () &#123;</span><br><span class="line">    console.log(&#x27;监听页面隐藏&#x27;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面卸载</span><br><span class="line">   */</span><br><span class="line">  onUnload: function () &#123;</span><br><span class="line">    console.log(&#x27;监听页面卸载&#x27;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>根据官方的图示我们可以知道，当页面调用会出现两个线程，显示的线程和后端数据处理的线程，某些线程在页面加载时只会触发一次。<br><img src="014.png" alt="014.png"><br>页面被加载时会自动触发如上方法</p>
+<p>使用上节课的路由跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">childtap()&#123;</span><br><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url: &#x27;/pages/logs/logs&#x27;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>此方法会保留当前的页面跳转<br><img src="015.png" alt="015.png"><br>当我们执行跳转在返回刚才的页面后我们会发现自动调用了两个方法，所以某些方法只需要自动调用一次，而onshow方法调用了多次。<br>换一种跳转方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">childtap()&#123;</span><br><span class="line">    wx.redirectTo(&#123;</span><br><span class="line">      url: &#x27;/pages/logs/logs&#x27;,</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="016.png" alt="016.png"><br>我们可以看到，如上方法会关闭当前页面进行跳转，当我们返回刚才的页面时相当于页面重新加载，所以会执行开始的方法。</p>
+<h2 id="获取用户信息"><a href="#获取用户信息" class="headerlink" title="获取用户信息"></a>获取用户信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">    userinfo:&#123;&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getuserinfo()&#123;</span><br><span class="line">    var that=this;</span><br><span class="line">    wx.getUserProfile(&#123;</span><br><span class="line">      desc: &#x27;asdfsdfs&#x27;,</span><br><span class="line">      success(res) &#123;</span><br><span class="line">         that.setData(&#123;</span><br><span class="line">          userinfo:res.userInfo</span><br><span class="line">         &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">image&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">&#125;</span><br><span class="line">text&#123;</span><br><span class="line">  color: aqua;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;content&quot;&gt;</span><br><span class="line">&lt;image  src=&quot;&#123;&#123;userinfo.avatarUrl&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">&lt;text&gt;&#123;&#123;userinfo.nickName&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;button bindtap=&quot;getuserinfo&quot; &gt; 点击获取用户信息&lt;/button&gt; </span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p>逻辑判断语法<br>wx:if=’条件’<br>wx:else=’条件’<br>wx:elif=’条件’</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年05月30日 23:06</p>
+        <p>最后更新： 2021年06月01日 22:02</p>
         <p>原始链接： <a class="post-url" href="/2021/05/30/WeChatDemo/" title="微信小程序逻辑代码">https://zhou2957.github.io/2021/05/30/WeChatDemo/</a></p>
         <footer>
             <a href="https://zhou2957.github.io">
@@ -276,12 +307,22 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81%E4%BB%A3%E7%90%86"><span class="post-toc-text">数据劫持代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="post-toc-text">事件绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%8F%AF%E4%BB%A5%E7%BB%91%E5%AE%9A%E5%9C%A8%E4%BB%BB%E4%BD%95%E7%BB%84%E4%BB%B6%E4%B8%8A%E3%80%82"><span class="post-toc-text">事件可以绑定在任何组件上。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81%E4%BB%A3%E7%90%86"><span class="post-toc-text">数据劫持代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="post-toc-text">事件绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%8F%AF%E4%BB%A5%E7%BB%91%E5%AE%9A%E5%9C%A8%E4%BB%BB%E4%BD%95%E7%BB%84%E4%BB%B6%E4%B8%8A%E3%80%82"><span class="post-toc-text">事件可以绑定在任何组件上。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC"><span class="post-toc-text">路由跳转</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="post-toc-text">生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="post-toc-text">获取用户信息</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
+  
+    <a href="/2021/06/02/CloudMusic/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          copy‘自己’的网易云音乐接口
+        
+      </span>
+    </a>
   
   
     <a href="/2021/05/30/WeChatNotebook/" id="article-nav-older" class="article-nav-link-wrap">
