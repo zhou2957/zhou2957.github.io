@@ -16,13 +16,13 @@
 <meta property="og:description" content="JavaIO什么是流内存与存储设备之间传输数据的通道  流的分类输入流(input)：将硬盘内容读入内存 输出流(output)：将内存内容写入硬盘 字节流：以字节为单位，可以读写所有数据 字符流：以字符为单位，只能读写文本数据 节点流：具有实际传输数据的读写功能 过滤流：在节点流的基础上增强其功能  示例代码FileInputStream12345678910111213public stati">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/001.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/02.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/002.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/003.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/004.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/005.png">
 <meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/006.png">
 <meta property="article:published_time" content="2021-06-04T12:40:52.000Z">
-<meta property="article:modified_time" content="2021-06-05T15:08:21.216Z">
+<meta property="article:modified_time" content="2021-06-05T15:12:33.917Z">
 <meta property="article:author" content="zhou2957">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/001.png">
@@ -172,7 +172,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		FileInputStream fis=new FileInputStream(&quot;e://Student.txt&quot;);</span><br><span class="line">		ObjectInputStream ois=new ObjectInputStream(fis);</span><br><span class="line">		Student s=(Student)ois.readObject();</span><br><span class="line">		//Student s2=(Student)ois.readObject();</span><br><span class="line">		ois.close();</span><br><span class="line">		System.out.println(&quot;对象反序列化完毕&quot;);</span><br><span class="line">		System.out.println(s.toString());</span><br><span class="line">		//System.out.println(s2.toString());  //同时实现两个对象的序列化</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p><img src="001.png" alt="001.png"></p>
 <h5 id="字符写入流-FileReader"><a href="#字符写入流-FileReader" class="headerlink" title="字符写入流  FileReader"></a>字符写入流  FileReader</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">		FileReader fr=new FileReader(&quot;e://test.txt&quot;);</span><br><span class="line">		int i = 0;         </span><br><span class="line">//		while((i=fr.read())!=-1) &#123; //单个字符读取</span><br><span class="line">//			System.out.print((char)i);</span><br><span class="line">//		&#125;</span><br><span class="line">		char[] c=new char[4];//以数组为一个单位读取  一次读取4个字符</span><br><span class="line">		while((i=fr.read(c))!=-1) &#123;</span><br><span class="line">			System.out.print(new String(c,0,i));</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		fr.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="文件字符输出流-FileWriter"><a href="#文件字符输出流-FileWriter" class="headerlink" title="文件字符输出流 FileWriter"></a>文件字符输出流 FileWriter</h5><p>我们可以如下写入<br><img src="02.png" alt="02.png"></p>
+<h5 id="文件字符输出流-FileWriter"><a href="#文件字符输出流-FileWriter" class="headerlink" title="文件字符输出流 FileWriter"></a>文件字符输出流 FileWriter</h5><p>我们可以如下写入<br><img src="002.png" alt="002.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		FileWriter fw=new FileWriter(&quot;e://test-1.txt&quot;);</span><br><span class="line">		for(int i=0;i&lt;10;i++) &#123;</span><br><span class="line">			fw.write(&quot;I Java \n&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		fw.close();</span><br><span class="line">		System.out.println(&quot;写入完毕&quot;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="字符流复制文件"><a href="#字符流复制文件" class="headerlink" title="字符流复制文件"></a>字符流复制文件</h5><pre><code>只能复制文本文件不能复制图片或二进制文件
@@ -199,7 +199,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年06月05日 23:08</p>
+        <p>最后更新： 2021年06月05日 23:12</p>
         <p>原始链接： <a class="post-url" href="/2021/06/04/JavaIONote/" title="JavaIO笔记">https://zhou2957.github.io/2021/06/04/JavaIONote/</a></p>
         <footer>
             <a href="https://zhou2957.github.io">
