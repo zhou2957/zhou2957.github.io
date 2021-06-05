@@ -3,29 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JavaIO笔记 | Z_z~s</title>
+  <title>Java笔记 | Z_z~s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Z_z 's Blog" />
   
   <meta name="description" content="JavaIO什么是流内存与存储设备之间传输数据的通道  流的分类输入流(input)：将硬盘内容读入内存 输出流(output)：将内存内容写入硬盘 字节流：以字节为单位，可以读写所有数据 字符流：以字符为单位，只能读写文本数据 节点流：具有实际传输数据的读写功能 过滤流：在节点流的基础上增强其功能  示例代码FileInputStream12345678910111213public stati">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaIO笔记">
-<meta property="og:url" content="https://zhou2957.github.io/2021/06/04/JavaNote/index.html">
+<meta property="og:title" content="Java笔记">
+<meta property="og:url" content="https://zhou2957.github.io/2021/06/04/JavaIONote/index.html">
 <meta property="og:site_name" content="Z_z~s">
 <meta property="og:description" content="JavaIO什么是流内存与存储设备之间传输数据的通道  流的分类输入流(input)：将硬盘内容读入内存 输出流(output)：将内存内容写入硬盘 字节流：以字节为单位，可以读写所有数据 字符流：以字符为单位，只能读写文本数据 节点流：具有实际传输数据的读写功能 过滤流：在节点流的基础上增强其功能  示例代码FileInputStream12345678910111213public stati">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/001.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/02.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/003.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/004.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/005.png">
-<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/006.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/001.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/02.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/003.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/004.png">
+<meta property="og:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/005.png">
 <meta property="article:published_time" content="2021-06-04T12:40:52.000Z">
-<meta property="article:modified_time" content="2021-06-05T14:56:21.945Z">
+<meta property="article:modified_time" content="2021-06-05T14:20:17.846Z">
 <meta property="article:author" content="zhou2957">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zhou2957.github.io/2021/06/04/JavaNote/001.png">
+<meta name="twitter:image" content="https://zhou2957.github.io/2021/06/04/JavaIONote/001.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -119,14 +118,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-JavaNote" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-JavaIONote" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      JavaIO笔记
+      Java笔记
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -193,14 +192,10 @@
 <h4 id="文件夹操作"><a href="#文件夹操作" class="headerlink" title="文件夹操作"></a>文件夹操作</h4><p><img src="004.png" alt="004.png"><br><img src="005.png" alt="005.png"></p>
 <h3 id="FileFilter接口"><a href="#FileFilter接口" class="headerlink" title="FileFilter接口"></a>FileFilter接口</h3><p>过滤得到的文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		File f=new File(&quot;E:\\4k&quot;);</span><br><span class="line">		File[] file=f.listFiles(new FileFilter() &#123;		</span><br><span class="line">			@Override</span><br><span class="line">			public boolean accept(File pathname) &#123;</span><br><span class="line">				if(pathname.getName().endsWith(&quot;.jpg&quot;)) &#123;</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					return false;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;);</span><br><span class="line">		</span><br><span class="line">	for(File i : file) &#123;</span><br><span class="line">			System.out.println(i.toString());</span><br><span class="line">	&#125;		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="递归遍历删除文件夹"><a href="#递归遍历删除文件夹" class="headerlink" title="递归遍历删除文件夹"></a>递归遍历删除文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		//dir(new File(&quot;e://test&quot;));</span><br><span class="line">		deldir(new File(&quot;e://test&quot;));</span><br><span class="line">	&#125;</span><br><span class="line">	public static void dir(File path) &#123;//遍历文件夹</span><br><span class="line">		if(path.exists()) &#123;</span><br><span class="line">			File[] fil=path.listFiles();</span><br><span class="line">			if(path.isDirectory()) &#123;</span><br><span class="line">				System.out.println(path.getAbsolutePath());</span><br><span class="line">				for(File f:fil) &#123;</span><br><span class="line">					dir(f);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				System.out.println(path.getAbsolutePath());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;遍历完成&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void deldir(File path) &#123;//删除文件夹</span><br><span class="line">		while(true) &#123;</span><br><span class="line">			if(path.exists()) &#123;</span><br><span class="line">				File[] fil=path.listFiles();</span><br><span class="line">				if(path.isDirectory()) &#123;</span><br><span class="line">					path.delete();</span><br><span class="line">					for(File f:fil) &#123;</span><br><span class="line">						deldir(f);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					path.delete();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="006.png" alt="006.png"></p>
-
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年06月05日 22:56</p>
-        <p>原始链接： <a class="post-url" href="/2021/06/04/JavaNote/" title="JavaIO笔记">https://zhou2957.github.io/2021/06/04/JavaNote/</a></p>
+        <p>最后更新： 2021年06月05日 22:20</p>
+        <p>原始链接： <a class="post-url" href="/2021/06/04/JavaIONote/" title="Java笔记">https://zhou2957.github.io/2021/06/04/JavaIONote/</a></p>
         <footer>
             <a href="https://zhou2957.github.io">
                 <img src="/images/logo.png" alt="zhou2957">
@@ -257,7 +252,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhou2957.github.io/2021/06/04/JavaNote/&title=《JavaIO笔记》 — Z_z~s&pic=https://zhou2957.github.ioimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhou2957.github.io/2021/06/04/JavaIONote/&title=《Java笔记》 — Z_z~s&pic=https://zhou2957.github.ioimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -267,22 +262,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhou2957.github.io/2021/06/04/JavaNote/&title=《JavaIO笔记》 — Z_z~s&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhou2957.github.io/2021/06/04/JavaIONote/&title=《Java笔记》 — Z_z~s&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhou2957.github.io/2021/06/04/JavaNote/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhou2957.github.io/2021/06/04/JavaIONote/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaIO笔记》 — Z_z~s&url=https://zhou2957.github.io/2021/06/04/JavaNote/&via=https://zhou2957.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java笔记》 — Z_z~s&url=https://zhou2957.github.io/2021/06/04/JavaIONote/&via=https://zhou2957.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhou2957.github.io/2021/06/04/JavaNote/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhou2957.github.io/2021/06/04/JavaIONote/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -292,7 +287,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zhou2957.github.io/2021/06/04/JavaNote/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://zhou2957.github.io/2021/06/04/JavaIONote/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -310,16 +305,26 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaIO"><span class="post-toc-text">JavaIO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B5%81"><span class="post-toc-text">什么是流</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%B5%81%E7%9A%84%E5%88%86%E7%B1%BB"><span class="post-toc-text">流的分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="post-toc-text">示例代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FileInputStream"><span class="post-toc-text">FileInputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FileOutputStream"><span class="post-toc-text">FileOutputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="post-toc-text">图片的复制</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%85%A5%E6%B5%81-FileInputStream"><span class="post-toc-text">字节缓冲输入流 FileInputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%87%BA%E6%B5%81-FileOutputStream"><span class="post-toc-text">字节缓冲输出流 FileOutputStream</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B5%81"><span class="post-toc-text">对象流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-1"><span class="post-toc-text">示例代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="post-toc-text">字符流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E5%86%99%E5%85%A5%E6%B5%81-FileReader"><span class="post-toc-text">字符写入流  FileReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E6%B5%81-FileWriter"><span class="post-toc-text">文件字符输出流 FileWriter</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="post-toc-text">字符流复制文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B5%81"><span class="post-toc-text">字符缓冲流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E5%86%99%E5%85%A5%E7%BC%93%E5%86%B2%E6%B5%81-BufferedReader"><span class="post-toc-text">字符写入缓冲流 BufferedReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E7%BC%93%E5%86%B2%E6%B5%81-BufferedWriter"><span class="post-toc-text">字符输出缓冲流 BufferedWriter</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%89%93%E5%8D%B0%E6%B5%81-PrintWriter"><span class="post-toc-text">字符打印流 PrintWriter</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="post-toc-text">转换流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#InputStreamReader"><span class="post-toc-text">InputStreamReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OutputStreamWriter"><span class="post-toc-text">OutputStreamWriter</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#File%E7%B1%BB"><span class="post-toc-text">File类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件夹操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FileFilter%E6%8E%A5%E5%8F%A3"><span class="post-toc-text">FileFilter接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="post-toc-text">递归遍历删除文件夹</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaIO"><span class="post-toc-text">JavaIO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B5%81"><span class="post-toc-text">什么是流</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%B5%81%E7%9A%84%E5%88%86%E7%B1%BB"><span class="post-toc-text">流的分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="post-toc-text">示例代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FileInputStream"><span class="post-toc-text">FileInputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FileOutputStream"><span class="post-toc-text">FileOutputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%9B%BE%E7%89%87%E7%9A%84%E5%A4%8D%E5%88%B6"><span class="post-toc-text">图片的复制</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%85%A5%E6%B5%81-FileInputStream"><span class="post-toc-text">字节缓冲输入流 FileInputStream</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%87%BA%E6%B5%81-FileOutputStream"><span class="post-toc-text">字节缓冲输出流 FileOutputStream</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B5%81"><span class="post-toc-text">对象流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-1"><span class="post-toc-text">示例代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="post-toc-text">字符流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E5%86%99%E5%85%A5%E6%B5%81-FileReader"><span class="post-toc-text">字符写入流  FileReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E6%B5%81-FileWriter"><span class="post-toc-text">文件字符输出流 FileWriter</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="post-toc-text">字符流复制文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B5%81"><span class="post-toc-text">字符缓冲流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E5%86%99%E5%85%A5%E7%BC%93%E5%86%B2%E6%B5%81-BufferedReader"><span class="post-toc-text">字符写入缓冲流 BufferedReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E7%BC%93%E5%86%B2%E6%B5%81-BufferedWriter"><span class="post-toc-text">字符输出缓冲流 BufferedWriter</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E6%89%93%E5%8D%B0%E6%B5%81-PrintWriter"><span class="post-toc-text">字符打印流 PrintWriter</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="post-toc-text">转换流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#InputStreamReader"><span class="post-toc-text">InputStreamReader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OutputStreamWriter"><span class="post-toc-text">OutputStreamWriter</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#File%E7%B1%BB"><span class="post-toc-text">File类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%B9%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件夹操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FileFilter%E6%8E%A5%E5%8F%A3"><span class="post-toc-text">FileFilter接口</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
+    <a href="/2021/06/04/JavaNote/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JavaIO笔记
+        
+      </span>
+    </a>
   
-    <a href="/2021/06/04/JavaIONote/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Java笔记</span>
+  
+    <a href="/2021/06/02/CloudMusic/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">copy‘自己’的网易云音乐接口</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
